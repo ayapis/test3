@@ -1,0 +1,283 @@
+@import "reset";
+
+$main_color: #76CCCA;
+$font_color: #515151;
+$hover_corel: #AEC24C;
+$sp: 768px;
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+body {
+  background: #F6F6F6;
+  font-family: Verdana,Arial,Helvetica,'meirio','メイリオ','Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4',Osaka,'ＭＳ Ｐゴシック',sans-serif;
+  header {
+    width: 100%;
+    border-top: 7px solid $main_color;
+    .header_container {
+      width: 920px;
+      height: 200px;
+      margin: auto;
+      // background: green;
+      @include sp {
+        width: 100vw;
+        height: auto;
+      }
+      .header_main {
+        height: 120px;
+        // background: rosybrown;
+        overflow: hidden;
+        @include sp {
+          height: 145px;
+        }
+        h1 {
+          float: left;
+          color: $font_color;
+          padding-top: 55px;
+          @include sp {
+            float: none;
+            padding: 0px;
+            width: 200px;
+            height: auto;
+            margin: 0px auto;
+          }
+        }
+        .about {
+          float: right;
+          @include sp {
+            float: none;
+          }
+          p {
+            text-align: right;
+            @include sp {
+              text-align: initial;
+            }
+            &:first-of-type {
+              font-size: 9px;
+              padding-top: 15px;
+              @include sp {
+                padding-top: 10px;
+                width: 220px;
+                height: auto;
+                margin: 0 auto;
+              }
+            }
+            &:nth-of-type(2) {
+              font-size: 25px;
+              padding-top: 10px;
+              @include sp {
+                padding-top: 5px;
+                width: 220px;
+                height: auto;
+                margin: auto;
+                text-align: center;
+              }
+            }
+            &:nth-of-type(3) {
+              font-size: 9px;
+              border: 1px solid $font_color;
+              margin-top: 5px;
+              padding: 8px 20px;
+              text-align: center;
+              @include sp {
+                width: 225px;
+                box-sizing: border-box;
+                margin: 3px auto 0px;
+                text-align: initial;
+              }
+            }
+          }
+          }
+        }
+        nav {
+          height: 70px;
+          margin: 10px auto 0px;
+          border-radius: 5px;
+          background: $main_color;
+          @include sp {
+            height: 210px;
+            background: initial;
+          }
+          ul {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              flex: 1 1;
+              position: relative;
+              display: flex;
+              @include sp {
+                flex: 0 1 50%;
+                border-radius: 5px;
+                border: 2px solid darken($main_color, 30%);
+                background: $main_color;
+              }
+              &::after {
+                content: "";
+                display: block;
+                width: 2px;
+                height: 100%;
+                background: darken($main_color, 15%);
+                position: absolute;
+                top: 0px;
+                right: 0px;
+              }
+              &:last-of-type::after {
+                content: none;
+              }
+              a {
+                width: 100%;
+                color: #fff;
+                text-decoration: none;
+                position: relative;
+                // display: flex;
+                // flex: 1 1;
+                // justify-content: center;
+                // outline: 2px solid darkorange;
+                .menu {
+                  width: 100%;
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  // outline: 2px solid hotpink;
+                }
+                .ja {
+                  display: block;
+                  text-align: center;
+                  // align-items: center;
+                  // outline: 2px solid purple;
+                }
+                .en {
+                  display: flex;
+                  font-size: 9px;
+                  justify-content: center;
+                  // outline: 2px solid purple;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main {
+    width: 920px;
+    height: 700px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    @include sp {
+      display: block;
+      width: 100vh;
+    }
+    .main_container {
+      width: 640px;
+      @include sp {
+        width: 100vw;
+        padding-left: 12px;
+        padding-bottom: 30px;
+      }
+      img {
+        width: 640px;
+        height: 280px;
+        vertical-align: top;
+        margin-bottom: 7px;
+        @include sp {
+          width: 90vw;
+          min-width: 640px;
+          height: auto;
+          max-height: 300px;
+        }
+      }
+      .news {
+        height: 413px;
+        background: #fff;
+        @include sp {
+          width: 95vw;
+          height: auto;
+        }
+        section {
+          width: 600px;
+          height: 325px;
+          margin: auto;
+          padding-top: 37px;
+          @include sp {
+            width: 90vw;
+            height: auto;
+          }
+          h3 {
+            font-size: 16px;
+            border-bottom: 3px solid $main_color;
+            padding-bottom: 10px;
+            @include sp {
+              width: 90vw;
+              margin: 0;
+            }
+          }
+          .article-container {
+            padding: 26px 9px;
+            article {
+              font-size: 14px;
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px dotted lighten($color: $font_color, $amount: 30%);
+              padding-bottom: 12px;
+              @include sp {
+                display: block;
+              }
+              h4 {
+                width: auto;
+                margin-bottom: 20px;
+              }
+              p {
+                font-size: 13px;
+                width: 430px;
+                @include sp {
+                  width: auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .main_category {
+      .list {
+        width: 260px;
+        height: 230px;
+        background: #fff;
+        border: 1px solid $main_color;
+        margin-bottom: 20px;
+        @include sp {
+          width: auto;
+          margin: 0px 10px;
+        }
+        h2 {
+          height: 40px;
+          font-size: 16px;
+          color: #fff;
+          background: $main_color;
+          padding: 8px 15px;
+        }
+        ul {
+          list-style: none;
+          padding: 0px 15px 20px;
+          font-size: 14px;
+          li {
+            border-bottom: 1px solid $main_color;
+            padding: 10px 15px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    width: 100%;
+  }
