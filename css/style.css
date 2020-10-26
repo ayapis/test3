@@ -371,6 +371,7 @@ video {
 body {
   background: #F6F6F6;
   font-family: Verdana,Arial,Helvetica,'meirio','メイリオ','Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4',Osaka,'ＭＳ Ｐゴシック',sans-serif;
+  color: #515151;
 }
 
 body header {
@@ -398,7 +399,7 @@ body header .header_container .header_main {
 
 @media (max-width: 768px) {
   body header .header_container .header_main {
-    height: 145px;
+    height: 150px;
   }
 }
 
@@ -595,7 +596,8 @@ body header .header_container nav ul li a .en {
 @media (max-width: 768px) {
   .main {
     display: block;
-    width: 100vh;
+    width: 100vw;
+    height: auto;
   }
 }
 
@@ -621,7 +623,7 @@ body header .header_container nav ul li a .en {
 @media (max-width: 768px) {
   .main .main_container img {
     width: 90vw;
-    min-width: 640px;
+    max-width: 640px;
     height: auto;
     max-height: 300px;
   }
@@ -704,6 +706,10 @@ body header .header_container nav ul li a .en {
   }
 }
 
+.main .main_category {
+  width: 100vw;
+}
+
 .main .main_category .list {
   width: 260px;
   height: 230px;
@@ -714,8 +720,8 @@ body header .header_container nav ul li a .en {
 
 @media (max-width: 768px) {
   .main .main_category .list {
-    width: auto;
-    margin: 0px 10px;
+    width: 95vw;
+    margin: 0 auto 20px;
   }
 }
 
@@ -739,6 +745,79 @@ body header .header_container nav ul li a .en {
 }
 
 footer {
-  width: 100%;
+  width: 920px;
+  margin: 20px auto 0px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    width: 95vw;
+  }
+}
+
+footer ul {
+  height: 30px;
+  line-height: 30px;
+  background: #76CCCA;
+  border-radius: 5px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  footer ul {
+    height: auto;
+  }
+}
+
+footer ul li {
+  color: #fff;
+  font-size: 14px;
+  background: url(https://haniwaman.com/sample/part3/template_08/common/images/bgFooterIcon.png) left center no-repeat;
+  padding-left: 25px;
+  margin-left: 15px;
+}
+
+footer .access {
+  text-align: right;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #76CCCA;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  footer .access {
+    display: block;
+  }
+}
+
+footer .access p {
+  margin-right: 10px;
+}
+
+footer .access p:last-child {
+  margin-right: 0px;
+}
+
+@media (max-width: 768px) {
+  footer .access p {
+    margin-right: 0px;
+  }
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 8px;
 }
 /*# sourceMappingURL=style.css.map */
