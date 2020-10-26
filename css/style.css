@@ -740,6 +740,7 @@ body header .header_container nav ul li a .en {
 }
 
 .main .main_category .list ul li {
+  background: url(https://haniwaman.com/sample/part3/template_08/common/images/bgListIcon01.png) left center no-repeat;
   border-bottom: 1px solid #76CCCA;
   padding: 10px 15px;
 }
